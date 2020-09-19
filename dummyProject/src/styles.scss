@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
+//Sass Variable
+$primary: lightcoral;
+body {
+    margin: 0;
+    font-family: "Nunito", "sans-serif";
+    font-size: 16px;
+}
+
+header {
+    background-color: $primary;
+    padding: 1em 0;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    a.logo {
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+    nav {
+        float: right;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+            li a {
+                padding: 1em;
+                &:hover {
+                    background: darken($color: $primary, $amount: 8%);
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

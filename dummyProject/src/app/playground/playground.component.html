@@ -1,0 +1,80 @@
+<div class="container">
+    <h3 class="mt-3">Welcome!</h3>
+
+    <!-- Communicating with typescript -->
+    <div class="play-container p-3">
+        <p> For more information on typescript, Please click the button below. Thanks </p>
+        <div>
+            <button class="form-control btn col-3" (click)="countClick()">This Submit Button</button>
+            <p class="mt-3"> You have clicked {{clickCounter}}.</p>
+        </div>
+        <!-- MULTIPLE STYLE -->
+        <div class="play-container p-3" [ngStyle]="{
+          'background-color': clickCounter <=2 ? 'lightgrey' : 'lightcoral',
+          'border': clickCounter <=2 ? '2px solid lightcoral' : '2px solid black'
+        }">
+            <ng-template [ngIf]="clickCounter <=2 " [ngIfElse]="none ">
+
+                <p class="mt-3"> {{ message }} .</p>
+            </ng-template>
+            <ng-template #none>
+                <p>WAIT PLEASE</p>
+                <p class="mt-3"> {{ message }} .</p>
+            </ng-template>
+
+        </div>
+
+    </div>
+
+    <!-- Two way Data Bidding -->
+    <div class="play-container p-3">
+        <div class="row ">
+            <div class="col">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName" class="form-control" [(ngModel)]="fname">
+                <span class="mt-2">You said your First Name is: <strong>{{ fname }}</strong> </span>
+            </div>
+            <div class="col">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" class="form-control" [(ngModel)]="lname">
+                <span class="mt-2">You said your Last Name is: <strong>{{ lname }}</strong> </span>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <label for="dOB">Date of Birth</label>
+                <input type="date" id="dOB" class="form-control" [(ngModel)]="birthdate">
+
+            </div>
+            <div class="col">
+                <br>
+                <span type="number" id="age">
+                   Your birthdate is {{ birthdate }} .
+              </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mt-4">
+                <button (click)="calculateAge()">Calculate Age</button>
+            </div>
+            <div class="col mt-4">
+                <span [(ngModel)]="age">You are {{ age }} years old.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Communicating with typescript with embbeded angular INLINE ONE STYLING WITH IF STATMENT -->
+    <!-- <div class="play-container p-3" [style.background-color]=" clickCounter <=2 ? 'lightgrey' : 'lightcoral' ">
+        <ng-template [ngIf]="clickCounter <=2 " [ngIfElse]="none ">
+            <p>You have clicked {{clickCounter}}.</p>
+        </ng-template>
+        <ng-template #none>
+            <p>WAIT PLEASE</p>
+        </ng-template>
+
+    </div> -->
+
+
+</div>

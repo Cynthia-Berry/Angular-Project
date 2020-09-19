@@ -1,0 +1,21 @@
+<div>
+    <div class="table">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Title</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of todo">
+                    <td>{{d.id}}</td>
+                    <td>{{d.title}}</td>
+                    <td>{{d.completed}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
