@@ -38,4 +38,13 @@ export class PlaygroundComponent implements OnInit {
       this.age = ((timeDiff  / (1000 * 3600 * 24))/365);
     }
   }
+  
+  setClasses(){
+    let myClasses = {
+      active: this.clickCounter > 4,
+      notactive: this.clickCounter <= 4,
+
+    }
+    return myClasses
+  }
 }

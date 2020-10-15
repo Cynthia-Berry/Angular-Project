@@ -10,3 +10,13 @@ div.play-container {
     border: 1px solid lightgray;
     margin-bottom: 2em;
 }
+
+.active {
+    background-color: yellow;
+    border: 2px solid black;
+}
+
+.notactive {
+    background-color: lightgrey;
+    border: 2px solid black;
+}

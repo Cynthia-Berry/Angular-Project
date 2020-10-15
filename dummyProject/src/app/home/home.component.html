@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="card mt-5">
+        <div class="card-body">
+            <div>
+                <table class="table table-hover">
+                    <thead class="thead-light ">
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let comment of comments">
+                            <td class="userId">{{ comment.id }}</td>
+                            <td class="name">{{ comment.name }}</td>
+                            <td class="email"> {{ comment.email }}</td>
+                            <td class="body">{{ comment.body}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

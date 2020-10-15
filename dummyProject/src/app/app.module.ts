@@ -2,26 +2,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
-import { CustomerComponent } from './customer/customer.component';
-import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
-
 import { HttpClientModule } from '@angular/common/http';
-import { AdminService} from './services/admin.service';
+
+
+import { AppComponent } from './app.component';
+import { CustomerComponent } from './customer/customer.component';
+import { HomeComponent } from './home/home.component';
 import { PlaygroundComponent } from './playground/playground.component';
+import { CountryComponent } from './country/country.component'
+import { HttpService } from './services/http.service';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
-    AdminComponent,
     HomeComponent,
-    PlaygroundComponent
+    PlaygroundComponent,
+    CountryComponent,
+    CurrencyConverterComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +36,11 @@ import { PlaygroundComponent } from './playground/playground.component';
     HttpClientModule,
     BsDatepickerModule.forRoot(),
     DatepickerModule.forRoot(),
+    NgxIntlTelInputModule
   ],
-  providers: [AdminService
+  providers: [
+    HttpService,
+
   ],
   bootstrap: [AppComponent]
 })

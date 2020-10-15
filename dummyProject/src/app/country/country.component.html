@@ -1,0 +1,133 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="col-sm-12 col-md-12 mt-5">
+
+            <h2 class="text-center">Currency Converter App with Country </h2>
+            <form [formGroup]="userForm">
+                <div class="card my-5">
+
+                    <div class="card-header">
+                        <h3> Personal Details</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <div class="row py-3">
+                                <div class="col">
+                                    <label for="firstName">First Name <span class="important ">*</span></label>
+                                    <input type="text" formControlName="firstName" class=" form-control form-control-lg ">
+                                </div>
+                                <div class="col ">
+                                    <label for="lastName">Last Name <span class="important ">*</span></label>
+                                    <input type="text" formControlName="lastName" class="form-control form-control-lg">
+                                </div>
+                            </div>
+
+                            <div class="row py-3">
+                                <div class="col">
+                                    <label for="email">Email <span class="important ">*</span></label>
+                                    <input type="email" formControlName="email" class="form-control form-control-lg">
+                                </div>
+                                <div class="col">
+                                    <label for="password">Password <span class="important ">*</span></label>
+                                    <div class="input-group">
+                                        <input type="password" formControlName="password" class="form-control form-control-lg">
+                                        <div class="input-group-append">
+                                            <img src="../../assets/eye-solid.svg" class="input-group-text" alt="Show Password" width="50" height="31">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <h5>Password toggle Logic is to be implemented</h5>
+                    </div>
+
+                </div>
+
+                <p class="text-center m-4">
+                    <strong>Note:</strong> This immediate examples(SELECT and DATALIST) does not allow for the flags to show because images cannot be emmbeded in an <i>option</i> tag
+                </p>
+
+                <div class="card my-5">
+                    <div class="card-header">
+                        <h3>Country Phone and flags</h3>
+                    </div>
+                    <p class=" mt-5 text-center"><strong>Manual Implementation</strong></p>
+                    <hr>
+                    <div class="card-body">
+                        <div class="row py-3 ">
+
+                            <div class="col">
+                                <label for="phone">Using Select tag</label>
+                                <div class="input-group ">
+                                    <div class="input-group-prepend ">
+                                        <select class="input-group-text " formControlName="countryFlags1">
+                        <option *ngFor="let country of countries ">
+                          <span> {{ country.countryName }} +{{ country.internationalDialingCode }}</span>
+                        </option>
+                      </select>
+                                    </div>
+                                    <input type="number " class="form-control form-control-lg ">
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <label for="browser ">Using Datalist tag</label>
+                                <input list="countries " formControlName="countryFlags2" class="form-control form-control-lg">
+                                <datalist id="countries ">
+                    <option *ngFor="let country of countries ">
+                      <span>
+                         <span class="m-2 ">  {{ country.countryName }}  </span>
+                         <span class="m-2 "> +{{ country.internationalDialingCode }} </span>
+                      </span>
+                  </datalist>
+                            </div>
+
+                        </div>
+
+                        <div class="row py-3">
+                            <div class="col-6 mx-auto d-block">
+                                <label for="countryDropdown">Bootstrap Dropdown with Unordered List</label>
+                                <div class="dropdown">
+                                    <input [(ngModel)]="selectedCountry" formControlName="countryFlags3" class="dropdown-toggle form-control form-control-lg" data-toggle="dropdown" />
+                                    <div class="dropdown-menu dropdown-menu-bottom">
+                                        <ul *ngFor="let country of countries">
+                                            <li class="dropdown-item" (click)="onSelectCountry(country)">
+                                                <img src="../../assets/flags/{{ country.isoAlphaTwo | lowercase }}.png" alt="{{ country.isoAlphaTwo}} flag" width="35" class=" align-middle mr-1 " />
+                                                <span class="align-middle ">{{ country.countryName}}</span>
+                                                <span class="align-middle ml-3 ">+{{ country.internationalDialingCode}}</span>
+                                            </li>
+                                            <div class="dropdown-divider "></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <hr class=" mt-5 ">
+                        <p class=" m-3 text-center "><strong>Using NGX country Picker</strong></p>
+                        <hr class=" mb-5 ">
+
+                        <div class="row ">
+                            <div class="col-6 mx-auto d-block ">
+                                <ngx-intl-tel-input [cssClass]=" 'custom' " [preferredCountries]="preferredCountries " [enableAutoCountrySelect]="true " [enablePlaceholder]="true " [searchCountryFlag]="true " [searchCountryField]="[SearchCountryField.Iso2,
+                                        SearchCountryField.Name] " [selectFirstCountry]="false " [selectedCountryISO]="CountryISO.Nigeria " [maxLength]="20 " [tooltipField]="TooltipLabel.Name " [phoneValidation]="true " [separateDialCode]="separateDialCode "
+                                    name="phone " formControlName="phone ">
+                                </ngx-intl-tel-input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <h5>Logic on ensuring the selected values gets displayed on the manual implementation</h5>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

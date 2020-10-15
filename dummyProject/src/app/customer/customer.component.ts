@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -10,8 +11,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CustomerComponent implements OnInit {
   todoForm: FormGroup;
 
-  constructor(private client: FormBuilder) {
-    this.todoForm = this.client.group({
+  constructor(private fb: FormBuilder) {
+    this.todoForm = this.fb.group({
       userId: [''],
       title: [''],
       completed: ['']
@@ -28,6 +29,7 @@ export class CustomerComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
 
 }

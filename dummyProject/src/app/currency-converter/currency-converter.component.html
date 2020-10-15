@@ -1,0 +1,62 @@
+<div class="main-section">
+    <div class="text">
+        <h2>Currency Converter</h2>
+    </div>
+    <div class="text2">
+        <label for="currency"><h2>Select Currency</h2></label>
+        <select name="fee" id="currency">
+      <option value="NGN">Naira</option>
+      <option value="ZMW">Zambian Kwacha</option>
+      <option value="GBP">Pounds Sterling</option>
+      <option value="USD">US Dollars</option>
+    </select>
+        <br>
+        <p>Input a value</p>
+        <input type="number" id="number" min="1" />
+        <br>
+
+        <label for="currency"><h2>Select Currency</h2></label>
+        <select name="fee" id="currency2">
+      <option value="NGN">Naira</option>
+      <option value="ZMW">Zambian Kwacha</option>
+      <option value="GBP">Pounds Sterling</option>
+      <option value="USD">US Dollars</option>
+    </select>
+        <br>
+        <button id="button" type="submit">CALCULATE</button>
+        <br>
+        <h2><output id="result"></output></h2>
+        <div>
+            <h3>Need more currency exchanges? <button id="btn">Click here!</button></h3>
+        </div>
+    </div>
+</div>
+<hr>
+<!-- <div class="card">
+    <div class="card-header">
+        <h3>Currency Converter</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="dropdown">
+                    <i name="countryDropdown" class="dropdown-toggle" data-toggle="dropdown"></i>
+
+                    <div class="dropdown-menu" data-target=".dropdown-item">
+                        <ul *ngFor="let country of countries">
+                            <li class="dropdown-item ">
+                                <img src="../../assets/flags/{{ country.isoAlphaTwo | lowercase }}.png " alt="{{ country.isoAlphaTwo}} flag " width="35 " class=" align-middle mr-1 " />
+                                <span class="align-middle ">{{ country.countryName}}</span>
+                                <span class="align-middle ml-3 ">+{{ country.internationalDialingCode}}</span>
+                            </li>
+                            <div class="dropdown-divider "></div>
+                        </ul>
+                    </div>
+                </div>
+                <input type="number " name=" " id=" ">
+            </div>
+            <div class="col "></div>
+        </div>
+    </div>
+    <div class="card-footer "></div>
+</div> -->
